@@ -1,0 +1,19 @@
+{% extends 'cursos/base.html' %}
+
+
+
+
+{% block main %}
+<br>
+<br>
+<br>
+<br>
+<h2>Borrar Alumno</h2>
+<p>¿Estás seguro de que deseas borrar a {{ object.nombre }} {{ object.apellido }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Borrar</button>
+    <a href="{% url 'alumnos_leer' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+
+{% endblock main %}
