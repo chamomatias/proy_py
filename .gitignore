@@ -1,7 +1,7 @@
 # Entorno virtual
 venv/
 __pycache__/
-db.sqlite3
+#db.sqlite3 >>>>>>>>>> Para este proyecto dejo disponible la base de datos
 
 # Archivos de configuración de PyCharm
 .idea/
