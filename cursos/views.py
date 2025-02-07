@@ -44,3 +44,26 @@ class AlumnosDelete(DeleteView):
     model = Alumnos
     template_name = 'cursos/alumnos_borrar.html'
     success_url = reverse_lazy('alumnos_leer')
+    
+
+class CursosCreate(CreateView):
+    model = Cursos
+    fields = ['nombre', 'descripcion']
+    template_name = 'cursos/cursos_crear.html'
+    success_url = reverse_lazy('cursos_leer')
+    
+class CursosRead(ListView):
+    model = Cursos
+    template_name = 'cursos/cursos_leer.html'
+    context_object_name = 'cursos'
+    
+class CursosUpdate(UpdateView):
+    model = Cursos
+    fields = ['nombre', 'descripcion']
+    template_name = 'cursos/cursos_actualizar.html'
+    success_url = reverse_lazy('cursos_leer')
+    
+class CursosDelete(DeleteView):
+    model = Cursos
+    template_name = 'cursos/cursos_borrar.html'
+    success_url = reverse_lazy('cursos_leer')

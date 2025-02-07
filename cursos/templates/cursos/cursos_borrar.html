@@ -1,0 +1,15 @@
+{% extends 'cursos/base.html' %}
+
+{% block main %}
+<br>
+<br>
+<br>
+<br>
+<h2>Borrar Curso</h2>
+<p>¿Estás seguro de que quieres borrar "{{ object.nombre }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, borrar</button>
+</form>
+<a href="{% url 'cursos_leer' %}">Cancelar</a>
+{% endblock main%}

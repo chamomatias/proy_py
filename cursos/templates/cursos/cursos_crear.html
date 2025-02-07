@@ -1,0 +1,16 @@
+{% extends 'cursos/base.html' %}
+
+{% block main %}
+<br>
+<br>
+<br>
+<br>
+<h2>Crear Curso</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+<a href="{% url 'cursos_leer' %}">Volver a la lista</a>
+
+{% endblock main%}
