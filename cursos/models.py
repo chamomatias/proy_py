@@ -8,8 +8,6 @@ class Cursos(models.Model):
         return self.nombre
 
 
-
-
 class Alumnos(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
