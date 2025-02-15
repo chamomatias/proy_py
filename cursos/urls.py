@@ -1,7 +1,10 @@
 from django.urls import path
+from django.views.generic import TemplateView
+
 from .views import (
     inicio,  
-    AlumnosCreate, AlumnosRead, AlumnosUpdate, AlumnosDelete, CursosCreate, CursosRead, CursosUpdate, CursosDelete
+    AlumnosCreate, AlumnosRead, AlumnosUpdate, AlumnosDelete, CursosCreate, CursosRead, CursosUpdate, CursosDelete,
+    contactos_crear,
 )
 
 urlpatterns = [
@@ -19,4 +22,11 @@ urlpatterns = [
     path('cursos_crear/', CursosCreate.as_view(), name='cursos_crear'),
     path('cursos_actualizar/<int:pk>/', CursosUpdate.as_view(), name='cursos_actualizar'),
     path('cursos_borrar/<int:pk>/', CursosDelete.as_view(), name='cursos_borrar'),
+
+    # Rutas de Contactos
+    path('contactos_crear/', contactos_crear, name='contactos_crear'),  # ✅ Nueva ruta para contactos_crear
+    path('contactos_exitosos/', TemplateView.as_view(template_name='cursos/contactos_exitosos.html'), name='contactos_exitosos' ),
+
 ]
+
+
